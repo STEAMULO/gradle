@@ -14,4 +14,6 @@ galaxy_info:
   - development
 
 dependencies:
-  - ANXS.oracle-jdk
+  - name: ANXS.oracle-jdk
+    src: ANXS.oracle-jdk
+    when: gradle_install_dependencies
