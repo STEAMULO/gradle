@@ -15,12 +15,9 @@
 - name: Gradle | Unpack the compressed Gradle
   command: unzip /tmp/gradle-{{gradle_version}}-all.zip -d /usr/local
 
-- name: Grade | Rename Gradle folder
-  command: mv /usr/local/gradle-{{gradle_version}} /usr/local/gradle
-
 - name: Gradle | Set the permissions on the Gradle binary
   file:
-    path: "/usr/local/gradle/bin"
+    path: "/usr/local/gradle-{{gradle_version}}/bin"
     state: directory
     mode: 0755
     recurse: yes
@@ -32,7 +29,7 @@
     line: "{{item.line}}"
     state: present
   with_items:
-    - regexp: "^GRADLE_HOME=/usr/local/gradle"
-      line: "GRADLE_HOME=/usr/local/gradle"
+    - regexp: "^GRADLE_HOME=/usr/local/gradle.*"
+      line: "GRADLE_HOME=/usr/local/gradle-{{gradle_version}}"
     - regexp: "^PATH=.*GRADLE_HOME.*"
       line: "PATH=$PATH:$GRADLE_HOME/bin"
