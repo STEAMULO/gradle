@@ -16,3 +16,9 @@ gradle_version: "2.1"             # The version of gradle to install
 #### Bugs and requests
 
 Can be reported [here](https://github.com/MagneDavidsen/gradle/issues)!
+
+### Author Information
+
+Steamulo - www.steamulo.com
+
+Forked from [Magne Davidsen](https://github.com/magnedavidsen)
